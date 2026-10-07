@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Eye, Pencil, Trash2 } from "lucide-react";
 import AttendanceBadge from "./AttendanceBadge";
 
 // React.memo prevents re-rendering this component unless its props change.
@@ -18,13 +19,13 @@ const StudentCard = React.memo(function StudentCard({ student, onEdit, onDelete 
       </td>
       <td className="action-buttons">
         <Link to={`/students/${student.id}`} className="btn btn-view">
-          View
+          <Eye size={16} /> View
         </Link>
         <button className="btn btn-edit" onClick={() => onEdit(student)}>
-          Edit
+          <Pencil size={16} /> Edit
         </button>
         <button className="btn btn-delete" onClick={() => onDelete(student.id)}>
-          Delete
+          <Trash2 size={16} /> Delete
         </button>
       </td>
     </tr>

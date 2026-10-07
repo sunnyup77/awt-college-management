@@ -94,6 +94,9 @@ a {
 }
 
 .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 8px 18px;
   border-radius: var(--radius-sm);
   font-weight: 500;
@@ -136,6 +139,9 @@ a {
 }
 
 .page-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--text);
@@ -208,6 +214,9 @@ a {
 }
 
 .recent-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 16px;
   font-size: 1.15rem;
 }
@@ -257,7 +266,9 @@ a {
 
 /* ---------- Badges ---------- */
 .badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.78rem;
@@ -283,7 +294,10 @@ a {
 
 /* ---------- Buttons ---------- */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   padding: 8px 16px;
   border-radius: var(--radius-sm);
   font-size: 0.85rem;
@@ -428,6 +442,9 @@ a {
 }
 
 .student-form h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 20px;
   font-size: 1.1rem;
 }
@@ -542,6 +559,9 @@ a {
 }
 
 .detail-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 24px;
@@ -581,6 +601,10 @@ a {
 }
 
 .not-found h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   font-size: 1.5rem;
   margin-bottom: 12px;
 }
@@ -600,6 +624,10 @@ a {
 }
 
 .empty-message p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   font-size: 1rem;
 }
 

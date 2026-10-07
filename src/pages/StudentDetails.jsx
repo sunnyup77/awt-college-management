@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { User, SearchX } from "lucide-react";
 import AttendanceBadge from "../components/AttendanceBadge";
 
 // StudentDetails page – displays full info for a single student
@@ -14,7 +15,7 @@ function StudentDetails({ students }) {
     return (
       <div className="page">
         <div className="not-found">
-          <h2>😕 Student Not Found</h2>
+          <h2><SearchX size={28} /> Student Not Found</h2>
           <p>No student exists with ID: {id}</p>
           <Link to="/students" className="btn btn-primary">
             ← Back to Students
@@ -31,7 +32,7 @@ function StudentDetails({ students }) {
       </Link>
 
       <div className="detail-card">
-        <h2 className="detail-title">👤 {student.name}</h2>
+        <h2 className="detail-title"><User size={24} /> {student.name}</h2>
 
         <div className="detail-grid">
           <div className="detail-item">

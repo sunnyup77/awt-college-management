@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import StudentCard from "../components/StudentCard";
 import StudentForm from "../components/StudentForm";
 import SearchBar from "../components/SearchBar";
+import { Users, X, Plus, SearchX } from "lucide-react";
 
 // Students page – Full CRUD with search and course filter
 // Demonstrates: useState, useMemo, .filter(), .map(), controlled forms,
@@ -74,7 +75,7 @@ function Students({ students, setStudents }) {
   return (
     <div className="page">
       <div className="page-header">
-        <h2 className="page-title">👨‍🎓 Student Management</h2>
+        <h2 className="page-title"><Users size={24} /> Student Management</h2>
         <button
           className="btn btn-primary"
           onClick={() => {
@@ -82,7 +83,7 @@ function Students({ students, setStudents }) {
             setShowForm(!showForm);
           }}
         >
-          {showForm && !editingStudent ? "✕ Close Form" : "➕ Add Student"}
+          {showForm && !editingStudent ? <><X size={18} /> Close Form</> : <><Plus size={18} /> Add Student</>}
         </button>
       </div>
 
@@ -121,7 +122,7 @@ function Students({ students, setStudents }) {
       {/* Student Table */}
       {filteredStudents.length === 0 ? (
         <div className="empty-message">
-          <p>😕 No students found matching your criteria.</p>
+          <p><SearchX size={24} /> No students found matching your criteria.</p>
         </div>
       ) : (
         <div className="table-wrapper">

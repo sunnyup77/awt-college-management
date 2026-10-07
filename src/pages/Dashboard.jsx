@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
+import { LayoutDashboard, Users, BookOpen, CircleCheck, ChartNoAxesColumnIncreasing, ClipboardList, Eye } from "lucide-react";
 import DashboardCard from "../components/DashboardCard";
 
 // Dashboard page – Shows statistics calculated from the data arrays
@@ -28,37 +29,37 @@ function Dashboard({ students, courses }) {
 
   return (
     <div className="page">
-      <h2 className="page-title">📊 Dashboard</h2>
+      <h2 className="page-title"><LayoutDashboard size={24} /> Dashboard</h2>
 
       <div className="dashboard-cards">
         <DashboardCard
           title="Total Students"
           value={stats.totalStudents}
-          icon="👨‍🎓"
+          icon={<Users size={28} />}
           color="#4f46e5"
         />
         <DashboardCard
           title="Total Courses"
           value={stats.totalCourses}
-          icon="📚"
+          icon={<BookOpen size={28} />}
           color="#0891b2"
         />
         <DashboardCard
           title="Active Courses"
           value={stats.activeCourses}
-          icon="✅"
+          icon={<CircleCheck size={28} />}
           color="#16a34a"
         />
         <DashboardCard
           title="Avg Attendance"
           value={`${stats.averageAttendance}%`}
-          icon="📈"
+          icon={<ChartNoAxesColumnIncreasing size={28} />}
           color="#ea580c"
         />
       </div>
 
       <div className="recent-section">
-        <h3>📋 Recent Students</h3>
+        <h3><ClipboardList size={22} /> Recent Students</h3>
         {recentStudents.length === 0 ? (
           <p className="empty-message">No students added yet.</p>
         ) : (
@@ -84,7 +85,7 @@ function Dashboard({ students, courses }) {
                       to={`/students/${student.id}`}
                       className="btn btn-view"
                     >
-                      View
+                      <Eye size={16} /> View
                     </Link>
                   </td>
                 </tr>

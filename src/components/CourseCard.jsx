@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Eye, Trash2 } from "lucide-react";
 
 // React.memo prevents unnecessary re-renders of CourseCard
 // when the parent re-renders due to search/filter state changes
@@ -10,9 +11,8 @@ const CourseCard = React.memo(function CourseCard({ course, onDelete }) {
       <div className="course-card-header">
         <h3>{course.name}</h3>
         <span
-          className={`badge ${
-            course.status === "Active" ? "badge-eligible" : "badge-detained"
-          }`}
+          className={`badge ${course.status === "Active" ? "badge-eligible" : "badge-detained"
+            }`}
         >
           {course.status}
         </span>
@@ -33,10 +33,10 @@ const CourseCard = React.memo(function CourseCard({ course, onDelete }) {
       </div>
       <div className="course-card-actions">
         <Link to={`/courses/${course.id}`} className="btn btn-view">
-          View Details
+          <Eye size={16} /> View Details
         </Link>
         <button className="btn btn-delete" onClick={() => onDelete(course.id)}>
-          Delete
+          <Trash2 size={16} /> Delete
         </button>
       </div>
     </div>

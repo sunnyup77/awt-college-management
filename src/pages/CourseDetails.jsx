@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { BookOpen, SearchX } from "lucide-react";
 
 // CourseDetails page – displays full info for a single course
 // Demonstrates: useParams() to read the :id from the URL
@@ -13,7 +14,7 @@ function CourseDetails({ courses }) {
     return (
       <div className="page">
         <div className="not-found">
-          <h2>😕 Course Not Found</h2>
+          <h2><SearchX size={28} /> Course Not Found</h2>
           <p>No course exists with ID: {id}</p>
           <Link to="/courses" className="btn btn-primary">
             ← Back to Courses
@@ -30,7 +31,7 @@ function CourseDetails({ courses }) {
       </Link>
 
       <div className="detail-card">
-        <h2 className="detail-title">📚 {course.name}</h2>
+        <h2 className="detail-title"><BookOpen size={24} /> {course.name}</h2>
 
         <div className="detail-grid">
           <div className="detail-item">

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Pencil, UserPlus } from "lucide-react";
 
 // StudentForm – Reusable form for both ADD and EDIT student operations
 // When editingStudent is provided, the form pre-fills with that student's data
@@ -95,7 +96,7 @@ function StudentForm({ onSubmit, editingStudent, onCancel }) {
 
   return (
     <form className="student-form" onSubmit={handleSubmit}>
-      <h3>{editingStudent ? "✏️ Edit Student" : "➕ Add New Student"}</h3>
+      <h3>{editingStudent ? <><Pencil size={20} /> Edit Student</> : <><UserPlus size={20} /> Add New Student</>}</h3>
 
       <div className="form-grid">
         <div className="form-group">
@@ -189,7 +190,7 @@ function StudentForm({ onSubmit, editingStudent, onCancel }) {
 
       <div className="form-actions">
         <button type="submit" className="btn btn-primary">
-          {editingStudent ? "Update Student" : "Add Student"}
+          {editingStudent ? <><Pencil size={18} /> Update Student</> : <><UserPlus size={18} /> Add Student</>}
         </button>
         {editingStudent && (
           <button type="button" className="btn btn-secondary" onClick={onCancel}>

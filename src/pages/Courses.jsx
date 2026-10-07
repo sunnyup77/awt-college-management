@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import CourseCard from "../components/CourseCard";
 import SearchBar from "../components/SearchBar";
+import { BookOpen, Plus, X, SearchX } from "lucide-react";
 
 // Courses page – displays courses with search, filter, add, and delete
 // Demonstrates: useState, useMemo, .filter(), .map(), controlled inputs
@@ -93,19 +94,19 @@ function Courses({ courses, setCourses }) {
   return (
     <div className="page">
       <div className="page-header">
-        <h2 className="page-title">📚 Course Management</h2>
+        <h2 className="page-title"><BookOpen size={24} /> Course Management</h2>
         <button
           className="btn btn-primary"
           onClick={() => setShowAddForm(!showAddForm)}
         >
-          {showAddForm ? "✕ Close Form" : "➕ Add Course"}
+          {showAddForm ? <><X size={18} /> Close Form</> : <><Plus size={18} /> Add Course</>}
         </button>
       </div>
 
       {/* Add Course Form */}
       {showAddForm && (
         <form className="student-form" onSubmit={handleAddCourse}>
-          <h3>➕ Add New Course</h3>
+          <h3><Plus size={20} /> Add New Course</h3>
           <div className="form-grid">
             <div className="form-group">
               <label>Course Name</label>
@@ -230,7 +231,7 @@ function Courses({ courses, setCourses }) {
       {/* Course Cards */}
       {filteredCourses.length === 0 ? (
         <div className="empty-message">
-          <p>😕 No courses found matching your criteria.</p>
+          <p><SearchX size={24} /> No courses found matching your criteria.</p>
         </div>
       ) : (
         <div className="course-grid">
